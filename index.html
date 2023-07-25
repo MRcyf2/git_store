@@ -1,0 +1,139 @@
+<!--
+ * @Author: ccaiyf 496357312@qq.com
+ * @Date: 2023-07-18 11:02:16
+ * @LastEditors: ccaiyf 496357312@qq.com
+ * @LastEditTime: 2023-07-19 10:58:13
+ * @FilePath: \htmlProject\index.html
+ * @Description: QQ:496357312
+ * 
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>学习中</title>
+</head>
+
+<body>
+
+    <button onclick="updateTime()">现在的时间是?</button>
+    
+    <body onload="updateTime()"> <!-- 无需调用函数，页面加载时自动调用  -->
+    <p id="demo"></p>
+    
+    <script>
+      function updateTime() {
+        var currentTime = new Date();
+        document.getElementById('demo').innerHTML = currentTime;
+        setTimeout(updateTime, 1000); // 每秒更新一次时间
+      }
+      document.write("Hello World!");//可以直接在页面中输出内容
+    </script>
+    
+    
+    <h2>验证输入合法性</h2>
+    <p>请输入1~100的数字</p>
+    <input id="numb">
+    <button type="button" onclick="myFunction()">提交</button>
+    <p id="demo1"></p>
+    <script>
+        function myFunction(){
+            var x, text;
+            x = document.getElementById("numb").value;
+            if (isNaN(x)||x<1||x>101){
+                text = "输入不合法";
+            }
+            else{
+                text = "输入合法";
+            }
+            document.getElementById("demo1").innerHTML = text;
+        }
+    </script>
+
+<!--超链接写法-->
+    <a href="https://www.runoob.com/js/js-class-inheritance.html" target="_blank">访问菜鸟教程!</a>
+   
+    <h2>表单验证</h2>
+    <script>
+        function validateForm(){
+            var x = document.forms["myForm"]["email"].value;
+            var atpos = x.indexOf("@");
+            var dotpos = x.lastIndexOf(".");
+            if (atpos<1||dotpos<atpos+2||dotpos+2>=x.length)
+            {
+                alert("error");
+                return false;
+            }
+        }
+    </script>
+
+    <form name="myForm" action="demo-form.php" onsubmit="return validateForm()" method="post">
+        Email: <input type="text" name="email">
+        <input type="submit" value="提交">
+    </form>
+
+    <h2>类继承</h2>
+    <p id="demoo"></p>
+    <p id="demoo2"></p>
+    <script>
+        class pet{
+            constructor(name){
+                this.name=name;
+            }
+            get pet_name(){
+                return this.name;
+            }
+            bark(){
+                return this.name+" is barking";
+            }
+            static eat(){
+                return this.name+" is eating";
+            }//只能在类中调用，不能在实例中调用
+        }
+        class dog extends pet{
+            constructor(name,age){
+                super(name);
+                this.age=age;
+            }
+            get dog_age(){
+                return this.age;
+            }
+            set dog_age(x){
+                this.age=x;
+            }
+            speak(){
+                
+                return this.name+" is "+this.age+" years old";
+            }
+            // static eat(){
+            //     return this.name+" is eating";
+            // }//无效，因为静态方法不能被实例调用
+        }
+        let dog1 = new dog("Rex",2);
+        document.getElementById("demoo").innerHTML = dog1.speak();
+        document.getElementById("demoo2").innerHTML = pet.eat();
+        
+    </script>
+
+    <p id="demo3"></p>
+    <script>
+    var w=window.innerWidth
+        || document.documentElement.clientWidth
+        || document.body.clientWidth;
+    var h=window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
+    x=document.getElementById("demo3");
+    x.innerHTML="浏览器window宽度: " + w + ", 高度: " + h + "。"
+    </script>
+
+    <script>
+    document.write(location.href);
+    </script>
+    <br>
+    <script>
+    document.write(location.pathname);
+    </script>
+</body>

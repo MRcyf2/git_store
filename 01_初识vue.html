@@ -1,0 +1,42 @@
+<!--
+ * @Author: ccaiyf 496357312@qq.com
+ * @Date: 2023-07-24 10:43:02
+ * @LastEditors: ccaiyf 496357312@qq.com
+ * @LastEditTime: 2023-07-24 11:25:56
+ * @FilePath: \htmlProject\vue_study\01_初识vue.html
+ * @Description: QQ:496357312
+ * 
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Vue</title>
+    <!--引入vue-->
+    <script type="text/javascript" src="../vue/vue.js"></script>
+</head>
+<body>
+    <!-- 准备一个容器 -->
+    <div id="root">
+        <h1>hello, {{name.toUpperCase()}}</h1>
+    </div>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false;//阻止启动生产消息
+
+        //创建vue实例
+        const x=new Vue({
+            el:"#root",//指定容器
+            //另一种写法
+            //el:document.getElementById("root")
+            data:{
+                name:"ccaiyf"
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

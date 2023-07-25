@@ -1,0 +1,36 @@
+<!--
+ * @Author: ccaiyf 496357312@qq.com
+ * @Date: 2023-07-21 11:29:09
+ * @LastEditors: ccaiyf 496357312@qq.com
+ * @LastEditTime: 2023-07-21 14:39:40
+ * @FilePath: \htmlProject\3vue.html
+ * @Description: QQ:496357312
+ * 
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 </title>
+<script src="https://cdn.staticfile.org/vue/3.0.5/vue.global.js"></script>
+</head>
+<body>
+<div id="hello-vue" class="demo">
+  {{ message }}
+</div>
+
+<script>
+const HelloVueApp = {
+  data() {
+    return {
+      message: 'Hello Vue!!'
+    }
+  }
+}
+
+Vue.createApp(HelloVueApp).mount('#hello-vue')
+</script>
+</body>
+</html>
