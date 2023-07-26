@@ -2,8 +2,8 @@
  * @Author: ccaiyf 496357312@qq.com
  * @Date: 2023-07-24 10:43:02
  * @LastEditors: ccaiyf 496357312@qq.com
- * @LastEditTime: 2023-07-24 11:25:56
- * @FilePath: \htmlProject\vue_study\01_初识vue.html
+ * @LastEditTime: 2023-07-26 11:32:55
+ * @FilePath: \git_store\01_初识vue.html
  * @Description: QQ:496357312
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
@@ -15,14 +15,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Vue</title>
     <!--引入vue-->
-    <script type="text/javascript" src="../vue/vue.js"></script>
+    <script type="text/javascript" src="vue.js"></script>
 </head>
 <body>
     <!-- 准备一个容器 -->
     <div id="root">
-        <h1>hello, {{name.toUpperCase()}}</h1>
+        <h1>hello, {{name}}</h1>
     </div>
-
+    <!--插值法，用于解析标签体内容-->
+    <hr>
     <script type="text/javascript">
         Vue.config.productionTip = false;//阻止启动生产消息
 
@@ -37,6 +38,20 @@
         })
 
         
+    </script>
+
+
+    <div id="root2">
+        <a v-bind:href="URL">bilibili</a>
+    </div>
+    <!--v-bind 指令语法，用于解析标签-->
+    <script type="text/javascript">
+        const y=new Vue({
+            el:"#root2",
+            data:{
+                URL:"https://www.bilibili.com/"
+            }
+        })
     </script>
 </body>
 </html>
